@@ -1,5 +1,8 @@
 
 import { useState } from 'react';
+
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+const CREATE_PEOPLE_ENDPOINT = import.meta.env.VITE_CREATE_PEOPLE_ENDPOINT;
 import { Mail, ArrowRight } from 'lucide-react';
 
 type EmailLoginProps = {
@@ -10,13 +13,27 @@ export default function EmailLogin({ onLogin }: EmailLoginProps) {
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = () => {
+
+  const handleSubmit = async () => {
     if (!email) return;
     setIsLoading(true);
-    setTimeout(() => {
+    try {
+      const response = await fetch(`${API_BASE_URL}${CREATE_PEOPLE_ENDPOINT}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name: email }),
+      });
+      if (!response.ok) throw new Error('Failed to create user');
+      // Optionally, you can parse the response if needed
+      // const data = await response.json();
       setIsLoading(false);
       onLogin(email);
-    }, 1500);
+    } catch (error) {
+      setIsLoading(false);
+      alert('Failed to create user. Please try again.');
+    }
   };
 
   const isValidEmail = email.includes('@') && email.includes('.');
