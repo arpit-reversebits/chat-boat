@@ -1,0 +1,206 @@
+/* Login Page Styles */
+.login-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #eef2ff 0%, #f3e8ff 50%, #fce7f3 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  background: rgba(255,255,255,0.85);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(80, 0, 120, 0.08);
+  border: 1px solid #fff3;
+  padding: 32px 24px 24px 24px;
+  backdrop-filter: blur(4px);
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.login-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(90deg, #6366f1 0%, #a21caf 100%);
+  border-radius: 16px;
+  margin: 0 auto 20px auto;
+  box-shadow: 0 4px 16px #a21caf22;
+}
+.login-icon .icon {
+  width: 32px;
+  height: 32px;
+  color: #fff;
+}
+.login-title {
+  font-size: 2rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #6366f1 0%, #a21caf 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+.login-subtitle {
+  color: #6b7280;
+  font-size: 1rem;
+}
+
+.login-card {
+  background: rgba(255,255,255,0.97);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(80, 0, 120, 0.13), 0 1.5px 8px 0 rgba(80,0,120,0.07);
+  border: 1.5px solid #e9d5ff;
+  padding: 32px 28px 28px 28px;
+  margin-bottom: 18px;
+  transition: box-shadow 0.2s;
+}
+.login-card:hover {
+  box-shadow: 0 12px 40px 0 rgba(80, 0, 120, 0.18), 0 2px 12px 0 rgba(80,0,120,0.10);
+}
+.login-card-header h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #312e81;
+  margin-bottom: 4px;
+}
+.login-card-header p {
+  color: #6b7280;
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+.login-form-group {
+  margin-bottom: 18px;
+}
+.login-form-group label {
+  display: block;
+  font-size: 0.98rem;
+  font-weight: 500;
+  color: #4b5563;
+  margin-bottom: 6px;
+}
+.login-input-wrapper {
+  position: relative;
+}
+.login-input {
+  width: 100%;
+  padding: 13px 44px 13px 16px;
+  border: 1.7px solid #c7d2fe;
+  border-radius: 10px;
+  font-size: 1.07rem;
+  color: #312e81;
+  background: rgba(243, 232, 255, 0.45);
+  box-shadow: 0 1.5px 8px #a21caf0a;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+.login-input:focus {
+  border-color: #a21caf;
+  outline: none;
+  background: #fff;
+  box-shadow: 0 2.5px 12px #a21caf22;
+}
+.input-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  color: #818cf8;
+}
+.login-btn {
+  width: 100%;
+  background: linear-gradient(90deg, #6366f1 0%, #a21caf 100%);
+  color: #fff;
+  padding: 12px 0;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-top: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 2px 8px #a21caf22;
+  transition: background 0.2s, opacity 0.2s;
+}
+.login-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.arrow-icon {
+  width: 18px;
+  height: 18px;
+}
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2.5px solid #fff;
+  border-top: 2.5px solid #a21caf;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.login-footer {
+  text-align: center;
+  margin-top: 18px;
+}
+.login-footer p {
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
